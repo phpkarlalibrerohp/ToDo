@@ -15,10 +15,10 @@ class CreateTasksTable extends Migration {
 		Schema::create('tasks', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->string('name',150);
+			$table->string('name',50);
 			$table->text('description');
-			$table->tinyInteger('status');
-			$table->integer('priority_id');
+			$table->date('started_at');
+			$table->date('end_at');
 			$table->timestamps();
 		});
 	}
@@ -32,4 +32,5 @@ class CreateTasksTable extends Migration {
 	{
 		Schema::drop('tasks');
 	}
+
 }

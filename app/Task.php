@@ -6,4 +6,10 @@ class Task extends Model {
 
 	protected $table = "tasks";
 
+	protected $fillable = [
+		'name',
+		'description',
+		'started_at',
+		'created_at'
+	];
 }
