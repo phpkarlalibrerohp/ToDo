@@ -16,8 +16,8 @@ Route::get('home', 'HomeController@index');
 Route::get('test','WelcomeController@test');
 
 Route::get('tasks/create','TasksController@create');
-Route::get('tasks', 'TasksController@tasks');
-
+Route::get('tasks', 'TasksController@index');
+Route::post('tasks', 'TasksController@store');
 
 //ignote this for a while
 Route::controllers([

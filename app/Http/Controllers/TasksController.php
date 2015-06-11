@@ -3,7 +3,8 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Task;
-use Illuminate\Http\Request;
+// use Illuminate\Http\Request;
+use Request;
 
 class TasksController extends Controller {
 
@@ -15,6 +16,9 @@ class TasksController extends Controller {
 	public function index()
 	{
 		//
+		$comment = 'Hello';
+		$tasks = Task::all();
+		return view('tasks.index',compact('tasks','comment'));
 	}
 
 	/**
@@ -35,7 +39,9 @@ class TasksController extends Controller {
 	 */
 	public function store()
 	{
-		//
+		$input = Request::all();
+
+		Task::create($input);
 	}
 
 	/**
